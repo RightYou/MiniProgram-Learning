@@ -1,0 +1,38 @@
+<!--pages/wxml/wxml.wxml-->
+<!-- 1.wxml的格式 -->
+
+<!-- 2.Mustache -->
+<view>{{message}}</view>
+<view>{{firstname}} {{lastname}}</view>
+<view>{{firstname+' '+lastname}}</view>
+<view>{{age>18?'成年人':'未成年人'}}</view>
+<view>{{nowTime}}</view>
+
+<!-- 3.条件判断 -->
+<view wx:if="{{score>=90}}">优秀</view>
+<view wx:elif="{{score>=80}}">良好</view>
+<view wx:elif="{{score>=60}}">及格</view>
+<view wx:else>不及格</view>
+
+<view hidden="{{false}}">hidden</view>
+
+<!-- 4.列表循环 -->
+<!-- <view wx:for="{{['abc','cba','nba']}}">{{item}}{{index}}</view>
+<view wx:for="coderwhy">{{item}}</view>
+<view wx:for="{{9}}">{{item}}</view> -->
+<block wx:for="{{movies}}" wx:for-item="movie" wx:for-index="i" wx:key="movie">
+  <view>{{i}}.{{movie}}</view>
+</block>
+
+<!-- 5.block标签 -->
+<!-- <block wx:for="{{3}}">
+  <button>按钮</button>
+  <view>哈哈哈</view>
+  <text>我是内容</text>
+</block> -->
+
+<!-- 6.模板 -->
+<!-- 定义模板 -->
+<import src="./template.wxml"/>
+
+<template is="contentItem" data="{{btnText:'按钮',content:'哈哈哈'}}"></template>
