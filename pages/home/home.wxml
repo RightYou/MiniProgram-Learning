@@ -1,3 +1,21 @@
-<!--pages/home/home.wxml-->
+<!--Pages/home/home.wxml-->
+<!-- 打通小程序 -->
 <text class="title">Hello World</text>
-<button size='mini'>按钮</button>
+<button size="mini">这是按钮</button>
+<image src="/assets/image/001.jpg" mode="aspectFit"></image>
+<!-- 1.数据展示 -->
+<view>Hello {{content}}</view>
+
+<!-- 2.列表展示 -->
+<view wx:for="{{movies}}" wx:key="index">{{item}}</view>
+
+<!-- 3.修改数据 -->
+<view>当前计数：{{counter}}</view>
+<button size="mini" bind:tap="increment">+</button>
+<button size="mini" bind:tap="decrement">-</button>
+
+<!-- 获取用户信息 -->
+<button size="mini" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获取信息</button>
+<!-- 展示用户信息 -->
+<open-data type="userNickName"></open-data>
+<!-- <open-data type="userAvatarUrl"></open-data> -->

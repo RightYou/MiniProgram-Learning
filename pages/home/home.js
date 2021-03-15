@@ -1,66 +1,61 @@
-// pages/home/home.js
+//getApp()获取App()产生的示例对象
+const app = getApp()
+
+const name = app.globalData.name;
+const age = app.globalData.age;
+
+//注册一个页面
+//页面也有自己的生命周期函数
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  //2、初始化数据
   data: {
+    content: "U.N-Owen",
+    movies: ["大话西游", "盗梦空间", "星际穿越"],
+    counter: 0
+  },
+
+  //3、监听wxml中的事件
+  handleGetUserInfo(event) {
+    console.log(event.detail);
+  },
+
+  increment() {
+    this.setData({
+      counter: ++this.data.counter
+    })
+  },
+
+  decrement() {
+    this.setData({
+      counter: --this.data.counter
+    })
+  },
+
+  //1、监听页面的生命周期函数,这里采用ES6的增强写法，所以和自动生成的不同
+  //页面被加载出来
+  onLoad() {
+
+  },
+  //页面初次渲染完成时
+  onReady() {
+
+  },
+  //页面显示出来时
+  onShow() {
+
+  },
+  //页面隐藏起来时
+  onHide() {
+
+  },
+  //页面向回跳转时
+  onUnload() {
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //4、其他事件
+  //下拉刷新
+  onPullDownRefresh() {
+    console.log("下拉刷新的事件");
   }
 })

@@ -1,7 +1,38 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/profile/profile"
   ],
+  "window": {
+    "navigationBarBackgroundColor": "#F0151D",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "口袋课堂",
+    "backgroundColor": "#feeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#51A3F9",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "assets/tabbar/主页_未点击.png",
+        "selectedIconPath": "assets/tabbar/主页.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "assets/tabbar/我的_未点击.png",
+        "selectedIconPath": "assets/tabbar/我的.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "assets/tabbar/我的_未点击.png"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }
